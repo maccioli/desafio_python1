@@ -1,4 +1,4 @@
-import operacoes, clientesDB
+import operacoes
 
 menu = """
 
@@ -6,6 +6,7 @@ menu = """
 
 Escolha uma opção:
 
+[c] Cadastrar cliente
 [d] Depositar
 [s] Sacar
 [e] Extrato
@@ -17,6 +18,14 @@ Escolha uma opção:
 while True:
 
     opcao = input(menu)
+
+    if opcao == "c":
+        nome_cliente = input(f"Digite o nome do cliente: ")
+        nascimento_cliente = input("Digite a data de nascimento (DDMMAAAA): ")
+        cpf_cliente = input("Digite o CPF (apenas números): ")
+        endereco_cliente = input("Digite o endereço: ")
+        cliente = {"nome": nome_cliente, "nascimento": nascimento_cliente, "cpf": cpf_cliente, "endereco": endereco_cliente}
+        operacoes.clientesDB.adicionar_cliente(cliente)
 
 
     if opcao == "d":

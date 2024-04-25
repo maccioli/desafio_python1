@@ -14,7 +14,7 @@ def sacar(valor):
             print("Saque não permitivo, verifique o valor digitado, saldo ou limite de saques.")
 
 def ver_extrato():
-      print(f"Extrato: \n{clientesDB.extrato}\n")
+    print(f"Extrato: \n{clientesDB.extrato}\n")
 
 def ver_saldo():
-      print(f"Seu saldo é de: {clientesDB.saldo:.2f}")
+    print(f"Seu saldo é de: {clientesDB.saldo:.2f}")
