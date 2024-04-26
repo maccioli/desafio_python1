@@ -1,4 +1,5 @@
 import operacoes
+import validacao
 
 menu = """
 
@@ -6,6 +7,7 @@ menu = """
 
 Escolha uma opção:
 
+[l] Listar clientes
 [c] Cadastrar cliente
 [d] Depositar
 [s] Sacar
@@ -19,13 +21,18 @@ while True:
 
     opcao = input(menu)
 
+    if opcao =="l":
+        validacao.verifica_conta()
+
     if opcao == "c":
+        conta_cliente += len(validacao.dados_clientes);
         nome_cliente = input(f"Digite o nome do cliente: ")
         nascimento_cliente = input("Digite a data de nascimento (DDMMAAAA): ")
         cpf_cliente = input("Digite o CPF (apenas números): ")
         endereco_cliente = input("Digite o endereço: ")
-        cliente = {"nome": nome_cliente, "nascimento": nascimento_cliente, "cpf": cpf_cliente, "endereco": endereco_cliente}
-        operacoes.clientesDB.adicionar_cliente(cliente)
+        saldo_cliente = 0
+        extrato_cliente = []
+        operacoes.cadastrar(conta_cliente, nome_cliente, nascimento_cliente, cpf_cliente, endereco_cliente, saldo_cliente, extrato_cliente)
 
 
     if opcao == "d":

@@ -1,5 +1,9 @@
 import clientesDB
 
+def cadastrar(conta_cliente, nome_cliente, nascimento_cliente, cpf_cliente, endereco_cliente, saldo_cliente, extrato_cliente):
+        cliente = {"conta": conta_cliente, "nome": nome_cliente, "nascimento": nascimento_cliente, "cpf": cpf_cliente, "endereco": endereco_cliente, "saldo": saldo_cliente, "extrato": extrato_cliente}
+        clientesDB.adicionar_cliente(cliente)
+
 def depositar(valor):
         clientesDB.saldo += valor
         clientesDB.extrato += f"Deposito: R${valor:.2f}\n" 
