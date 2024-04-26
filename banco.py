@@ -7,6 +7,7 @@ menu = """
 
 Escolha uma opção:
 
+[t] teste
 [l] Listar clientes
 [c] Cadastrar cliente
 [d] Depositar
@@ -21,14 +22,18 @@ while True:
 
     opcao = input(menu)
 
+    if opcao =="t":
+        print(validacao.adicionar_nova_conta())
+
     if opcao =="l":
-        validacao.verifica_conta()
+        validacao.listar_clientes();
 
     if opcao == "c":
-        conta_cliente += len(validacao.dados_clientes);
+        conta_cliente = validacao.adicionar_nova_conta()
         nome_cliente = input(f"Digite o nome do cliente: ")
         nascimento_cliente = input("Digite a data de nascimento (DDMMAAAA): ")
         cpf_cliente = input("Digite o CPF (apenas números): ")
+        validacao.verifica_cpf_existente(cpf_cliente)
         endereco_cliente = input("Digite o endereço: ")
         saldo_cliente = 0
         extrato_cliente = []

@@ -24,5 +24,7 @@ def salvar_clientes(clientes):
 def adicionar_cliente(cliente):
     cliente_banco.append(cliente)
     salvar_clientes(cliente_banco)
+    print(cliente_banco);
+
 
 cliente_banco = carregar_clientes()
